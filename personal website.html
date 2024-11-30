@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+    <style>
+       body {
+      font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        
+    
+    background-image: url('star.jpg');
+    }
+
+        header {
+            background-color :#191970;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        header h1 {
+            font-size: 2rem;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid white; 
+            display: inline-block;
+            animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite, glow 2s infinite alternate;
+        }
+
+        
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+    
+        @keyframes blink-caret {
+            from, to {
+                border-color: transparent;
+            }
+            50% {
+                border-color: white;
+            }
+        }
+    
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 5px #ff69b4, 0 0 10px #ff69b4, 0 0 15px #ff69b4;
+            }
+            100% {
+                text-shadow: 0 0 20px #ff1493, 0 0 30px #ff1493, 0 0 40px #ff1493;
+            }
+        }
+
+            .about-me {
+        text-align: center;
+        background-color: #f9f9f9; 
+        padding: 40px 20px;
+        border-radius: 12px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        margin: 40px auto;
+        max-width: 1200px;
+    }
+
+    .about-me h2 {
+        font-size: 32px;
+        color: #6a5acd;
+        margin-bottom: 20px;
+    }
+
+    .about-me img {
+        width: 100%; 
+           }
+
+.audio-player {
+        display: block;
+        margin: 10px auto;
+        width: 300px; 
+        background-color: #f4f4f4; 
+        border: 1px solid #cccc
+        border-radius: 8px; 
+    }
+
+        section {
+            padding: 10px;
+            margin: 10px;
+        }
+        .biodata, .hobby, .resume, .about-me, .social-media, .gallery {
+            background-color:#F4F4F4;
+            border-radius: 30px;
+            margin-top: 40px;
+            margin-bottom: 90px;
+        }
+        h2 {
+            color: #333;
+        }
+        .social-media a {
+            text-decoration: none;
+            color: #F3843C;
+            margin: 0 10px;
+            font-size: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .jump-button {
+            padding: 10px 20px;
+            background-color: #fc6fd0; 
+            color: tangerine;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;   
+            font-size: 16px;
+            margin: 5px;
+        }
+        .jump-button:hover {
+            background-color: #fbcf41;
+        }
+        .gallery-images {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .gallery-images img {
+    width: 30%; 
+    aspect-ratio: 4 / 3; 
+    margin: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    object-fit: cover; 
+}
+    .gallery-videos {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 500px;
+    }
+
+    .gallery-videos video {
+        width: 500px;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table th, table td {
+            padding: 15px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        table th {
+            background-color: #5966b1;
+            color: white;
+        }
+        .about-me {
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .about-me img {
+            margin-top: 10px;
+            max-width: 25%;
+            height: auto;
+        }
+        table td img {
+            display: block;
+            margin: 0 auto;
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        table td p {
+            margin-top: 10px;
+            text-align: center;
+            color: #333;
+            font-size: 14px;
+
+    </style>
+    <style>
+    .countdown-container {
+        margin-top: 20px;
+        font-family: 'Arial', sans-serif;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        color: #ff69b4 ;
+        font-size: 20px;
+        font-weight: bold;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+    .countdown-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #ff69b4;
+        border-radius: 8px;
+        padding: 10px 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .countdown-box span {
+        font-size: 16px;
+        color: #333;
+    }
+    .countdown-box .value {
+        font-size: 28px;
+        color: #333;
+    }
+</style>
+<style>
+    .resume {
+        background-color: #f9f9f9;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        margin: 40px auto;
+        max-width: 900px;
+        font-family: Arial, sans-serif;
+    }
+
+    .resume h2 {
+        text-align: center;
+        color: #6a5acd;
+        font-size: 32px;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+    }
+
+    .resume-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    .resume-table thead th {
+        background-color: #6a5acd;
+        color: #fff;
+        font-size: 18px;
+        padding: 10px;
+        text-align: left;
+    }
+
+    .resume-table tbody td {
+        padding: 15px;
+        vertical-align: top;
+        border-bottom: 1px solid #ddd;
+        font-size: 16px;
+        color: #333;
+    }
+
+    .resume-table tbody td:first-child {
+        font-weight: bold;
+        color: #f3843c;
+        width: 25%;
+    }
+
+    .resume-table tbody td:last-child {
+        width: 75%;
+    }
+
+    .resume-table tbody tr:last-child td {
+        border-bottom: none;
+    }
+
+    .resume-table tbody td strong {
+        color: #444;
+    }
+
+    .resume-table tbody td em {
+        color: #555;
+        font-style: italic;
+    }
+</style>
+
+
+</head>
+<body>
+<header>
+    <h1>☆═━┈˚ ⋆ ˚｡ ⋆୨ 𝒘𝒆𝒍𝒄𝒐𝒎𝒆 𝒕𝒐 𝒎𝒚 𝒘𝒐𝒓𝒍𝒅 ୧⋆ ˚｡┈━═☆</h1>
+</header> 
+</body>
+</html>
+
+
+
+<div class="button-container">
+    <button class="jump-button" onclick="location.href='#about-me'"> 𝒂𝒃𝒐𝒖𝒕 𝒎𝒆</button>
+    <button class="jump-button" onclick="location.href='#biodata'">𝒃𝒊𝒐𝒅𝒂𝒕𝒂</button>
+    <button class="jump-button" onclick="location.href='#hobby'"> 𝒉𝒐𝒃𝒃𝒚</button>
+    <button class="jump-button" onclick="location.href='#resume'"> 𝒓𝒆𝒔𝒖𝒎𝒆</button>
+    <button class="jump-button" onclick="location.href='#gallery'">𝒈𝒂𝒍𝒍𝒆𝒓𝒚</button>
+    <button class="jump-button" onclick="location.href='#social-media'">𝒔𝒐𝒄𝒊𝒂𝒍 𝒎𝒆𝒅𝒊𝒂</button>
+
+</div>
+<section class="about-me" id="about-me">
+    <h2>★⋆. 𝓪𝓫𝓸𝓾𝓽 𝓶𝓮 ★⋆. </h2>
+    <img src="aboutme.jpg" alt="About Me Image">
+
+       <audio controls class="audio-player">
+        <source src="song.m4a" type="audio/mpeg">
+    </audio> 
+    <h1>︵‿︵‿୨𝑩𝒊𝒓𝒕𝒉𝒅𝒂𝒚 𝒄𝒐𝒖𝒏𝒕𝒅𝒐𝒘𝒏 🎈୧‿︵‿︵</h1>
+    <div id="countdown" class="countdown-container"></div>
+</section>
+
+<script>
+        // Set the date and time to count down to
+        const countdownDate = new Date("August 9, 2025 23:59:59").getTime();
+
+        // Update the countdown every second
+        setInterval(() => {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+
+            // Calculate days, hours, minutes, and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // If the countdown is finished
+            if (distance < 0) {
+                document.getElementById("countdown").innerHTML = 
+                    `<div class="countdown-box">🎉 My Birthday 🎉</div>`;
+                return;
+            }
+
+            // Display the result in styled divs
+            document.getElementById("countdown").innerHTML = `
+                <div class="countdown-box">
+                    <div class="value">${days}</div>
+                    <span>Days</span>
+                </div>
+                <div class="countdown-box">
+                    <div class="value">${hours}</div>
+                    <span>Hours</span>
+                </div>
+                <div class="countdown-box">
+                    <div class="value">${minutes}</div>
+                    <span>Minutes</span>
+                </div>
+                <div class="countdown-box">
+                    <div class="value">${seconds}</div>
+                    <span>Seconds</span>
+                </div>
+            `;
+        }, 1000);
+    </script> 
+
+
+</section>
+
+<section class="biodata" id="biodata">
+    <center> <h2>°•. ★ .•°𝓫𝓲𝓸𝓭𝓪𝓽𝓪 ★⋆. ࿐࿔</h2>
+    <p>Name: Nur Afrina Aleeya binti Nazry</p>
+    <p>Age: 20</p>
+    <p> Number of Sibling : 5 </p>
+    <p>Email: afrinanazry98@gmail.com</p>
+     <p>Birthdate: 9 August 2004<p>
+     <p>Birthplace: Kuala Lumpur, Malaysia</p>
+    <p> Favourite food : ayam sambal </p>
+    <p> Favourite drink : teh o ais limau </p>
+    <p> Favourite place : home </p>
+    <p> Favourite singer : seventeen </p>
+
+      </center>
+
+
+</section>
+
+<section class="hobby" id="hobby">
+    <center><h2>⭑ ★ ⭑ ˗ ˏˋ𝓱𝓸𝓫𝓫𝔂´ˎ ˗ ⭑ ★ ⭑</h2></center>
+    <table>
+        <thead>
+            <tr>
+                <th>Hobby</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Hobby Row 1 -->
+            <tr>
+                <td>Reading</td>
+                <td>
+                    <img src="reading.jpg">
+                    <p>I found my comfort place by reading a book,This hobby started because my dad used to buy plenty of princess books when I was younger and this hobby still growing on me.<p>
+                </td>
+            </tr>
+            <!-- Hobby Row 2 -->
+            <tr>
+                <td>Journaling </td>
+                <td>
+                    <img src="journaling.jpg">
+                    <p> Journaling help me to preserve my memory and moments by putting together the pages and fill it with my own narrative of that day </p>
+                </td>
+            </tr>
+            <!-- Hobby Row 3 -->
+            <tr>
+                <td>Traveling</td>
+                <td>
+                    <img src="travel.jpg">
+                    <p>I love exploring new places and experiencing different cultures. Traveling broadens my perspective and provides unforgettable memories.</p>
+                </td>
+            </tr>
+            <!-- Hobby Row 4-->
+                        <tr>
+                <td>Collecting Picture</td>
+                <td>
+                    <img src="polaroid.jpg">
+                    <p> I always carry my polaroid or printing out pictures of the moments that I want to preserve since I feel it much more memorable compared to keeping picture on online / digital storage <p>
+                </td>
+            </tr>
+            <!-- Hobby Row 5-->
+            <tr>
+                <td> Cooking </td>
+                <td>
+                    <img src="cooking.jpg">
+                    <p> I found my self feeling calm when I cook especially when I cook for others. This hobby started because of my 
+                    mom always cooking for us everyday back at home. 
+                </td>
+            </tr>
+           
+        </tbody>
+    </table>
+</section>
+
+<section class="resume" id="resume">
+    <h2>˚₊‧꒰𝓻𝓮𝓼𝓾𝓶𝓮꒱ ‧₊˚</h2>
+    <table class="resume-table">
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Work Experience</td>
+                <td>
+                    <strong>Internship</strong><br>
+                    <em>Perpustakaan Tun Abdul Razak, UiTM Shah Alam</em> (July 2024 - September 2024)<br>
+                    - Stationed in 10 different departments.<br>
+                    - Assisted with tasks and attended workshops provided by PTAR Shah Alam.<br><br>
+                    <strong>Food and Beverages Worker</strong><br>
+                    <em>Krispy Kreme</em> (June 2022 - August 2022)<br>
+                    - Provided excellent customer service, addressing inquiries and processing transactions.<br>
+                    - Served nearly 600 customers daily with top-notch service.
+                </td>
+            </tr>
+            <tr>
+                <td>Education</td>
+                <td>
+                    <strong>University</strong><br>
+                    <em>Universiti Teknologi Mara (UiTM), Johor Campus, Segamat</em><br>
+                    Diploma in Information Management (2022 - Now)<br><br>
+                    <strong>High School</strong><br>
+                    <em>SMK Seksyen 9, Shah Alam</em><br>
+                    Computer Science Stream (2017 - 2022)
+                </td>
+            </tr>
+            <tr>
+                <td>Skills</td>
+                <td>
+                    <strong>Languages</strong><br>
+                    - Bahasa Malaysia (Native)<br>
+                    - English (High Proficiency, MUET Band: 4.5)<br>
+                    - Bahasa Indonesia (Comfortable)<br>
+                    - Korean (Beginner Level)<br><br>
+                    <strong>Coding Languages</strong><br>
+                    - C++ (Intermediate)<br>
+                    - JavaScript (Entry Level)<br>
+                    - Python (Entry Level)<br><br>
+                    <strong>Software</strong><br>
+                    - Microsoft Word, PowerPoint (High Proficiency)<br>
+                    - Microsoft Excel (Intermediate)<br>
+                    - Canva, Capcut (High Proficiency)<br><br>
+                    <strong>Soft Skills</strong><br>
+                    - Good Communication Skills<br>
+                    - Teamwork<br>
+                    - Adaptability to New Environments
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+<!-- New Gallery Section -->
+<section class="gallery" id="gallery">
+    <center><h2>˖⁺‧₊˚ ˚₊‧⁺˖𝓰𝓪𝓵𝓵𝓮𝓻𝔂˖⁺‧₊˚ ˚₊‧⁺˖</h2></center>
+   <center> <p>Here are some images from my personal collection</p></center>
+    <div class="gallery-images">
+     <center>   <img src="family.jpg" alt="Image 1">
+        <p>  𝓶𝔂 𝓯𝓪𝓶𝓲𝓵𝔂 𝓻𝓪𝔂𝓪 𝓹𝓲𝓬𝓽𝓾𝓻𝓮  </p>
+        <img src="child1.jpg" alt="Image 2">
+        <p>  𝓶𝔂 𝓫𝓪𝓫𝔂 𝓹𝓱𝓸𝓽𝓸 𝔀𝓲𝓽𝓱 𝓶𝔂 𝓭𝓪𝓭   </p>
+        <img src="child2.jpg" alt="Image 3">
+        <p>   𝓫𝓪𝓫𝔂 𝓶𝓮</p>
+        <img src="family2.jpg" alt="Image 4">
+        <p>  𝓫𝓲𝓻𝓽𝓱𝓭𝓪𝔂 𝓹𝓲𝓬𝓽𝓾𝓻𝓮 𝔀𝓲𝓽𝓱 𝓶𝔂 𝓯𝓪𝓶𝓲𝓵𝔂   </p>
+        <img src="family3.jpg" alt="Image 5">
+        <p>  𝓰𝓪𝓻𝓭𝓮𝓷 𝓹𝓲𝓬𝓽𝓾𝓻𝓮 𝔀𝓲𝓽𝓱 𝓶𝔂 𝓵𝓸𝓿𝓮𝓼 𝓸𝓷𝓮    </p>
+        <img src="friend1.jpg" alt="Image 6">
+        <p>   𝓹𝓲𝓬𝓽𝓾𝓻𝓮 𝔀𝓲𝓽𝓱 𝓶𝔂 𝓱𝓲𝓰𝓱 𝓼𝓬𝓱𝓸𝓸𝓵 𝓰𝓻𝓸𝓾𝓹 </p>
+        <img src="friend2.jpg" alt="Image 7">
+        <p> 𝓹𝓲𝓬𝓽𝓾𝓻𝓮 𝔀𝓲𝓽𝓱 𝓶𝔂 𝓾𝓷𝓲 𝓫𝓮𝓼𝓽𝓲𝓮𝓼 </p>
+        <img src="friend3.jpg" alt="Image 8">
+        <p>  𝓹𝓲𝓬𝓽𝓾𝓻𝓮 𝔀𝓲𝓽𝓱 𝓷𝓪𝓳𝔀𝓪 𝓪𝓷𝓭 𝓻𝓲𝓯𝓱𝓪𝓷𝓲𝓼  </p>
+        <img src="me.jpg" alt="Image 9">
+        <p>  𝓹𝓲𝓬𝓽𝓾𝓻𝓮 𝓲𝓷 𝓽𝓾𝓻𝓴𝓲𝔂𝓮  </p>
+        <img src="me2.jpg" alt="Image 10">
+        <p>  𝓹𝓲𝓬𝓽𝓾𝓻𝓮 𝓲𝓷 𝓴𝓸𝓻𝓮𝓪   </p> </center>
+    </div>
+
+    <center><h2>☆.。.:*・° 𝒗𝒊𝒅𝒆𝒐 ☆.。.:*・°</h2></center>
+    <div class="gallery-videos">
+        <!-- Local Video 1 -->
+       <center> <video controls>
+            <source src="video1.mov" type="video/mp4">
+        </video>      
+           <!-- Local Video 2 -->
+        <video controls>
+            <source src="video2.mp4" type="video/mp4">
+        </video>
+</center>
+
+</section>
+
+
+<section class="social-media" id="social-media">
+    <center><h2>˖⁺‧₊˚ ˚₊‧⁺˖✮ 𝒔𝒐𝒄𝒊𝒂𝒍 𝒎𝒆𝒅𝒊𝒂 ✮˖⁺‧₊˚ ˚₊‧⁺˖</h2>
+    <p>Stay connected and follow me on social media:</p> </center>   
+     <style>
+            .instagram-link img {
+                width: 40px; 
+                height: auto;
+            }
+        
+            .Tiktok-link img{
+                 width: 40px; 
+                height: auto;
+            }
+            
+        </style>
+        <body> 
+            <center>
+            <a href="https://www.instagram.com/afrinazry/" target="_blank" class="instagram-link">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo">
+            </a>
+            <a href="https://www.tiktok.com/@sherupplimaooo?_t=8rpLEQGWndQ&_r=1" target="_blank" class="instagram-link">
+                <img src="https://static.wikia.nocookie.net/tiktok/images/e/eb/TikTok_Logo.png/revision/latest?cb=20210816124125" alt="tiktok Logo">
+            </a>
+
+        </center>       
+</section>
+
+<footer>
+    <p>&copy; 2024 Afrina Nazry. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
